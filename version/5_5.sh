@@ -12,16 +12,6 @@ tar xzf libmemcached-1.0.18.tar.gz && cd libmemcached-1.0.18
 make && make install
 cd .. && rm -fr libmemcached-1.0.18*
 
-echo "=========== Installing librabbitmq ============"
-wget https://github.com/alanxz/rabbitmq-c/releases/download/v0.5.2/rabbitmq-c-0.5.2.tar.gz
-tar xzf rabbitmq-c-0.5.2.tar.gz 
-cd rabbitmq-c-0.5.2 && mkdir build && cd build
-cmake ..
-cmake --build . --target install
-ln -s /usr/local/lib/x86_64-linux-gnu/librabbitmq.so /usr/local/lib/librabbitmq.so
-ln -s /usr/local/lib/x86_64-linux-gnu/librabbitmq.so.1 /usr/local/lib/librabbitmq.so.1
-cd ../.. && rm -rf rabbitmq-c*
-
 echo "============ Installing phpenv ============="
 git clone git://github.com/CHH/phpenv.git $HOME/phpenv
 $HOME/phpenv/bin/phpenv-install.sh
