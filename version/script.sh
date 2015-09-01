@@ -34,6 +34,21 @@ php-build -i development --pear 5.3.29 $HOME/.phpenv/versions/5.3.29
 phpenv rehash 
 phpenv global 5.3.29
 
+echo "============ Building PHP 5.4.39 =============="
+php-build -i development --pear 5.4.39 $HOME/.phpenv/versions/5.4.39
+phpenv rehash 
+phpenv global 5.4.39
+
+echo "============ Building PHP 5.5.23 =============="
+php-build -i development --pear 5.5.23 $HOME/.phpenv/versions/5.5.23
+phpenv rehash 
+phpenv global 5.5.23
+
+echo "============ Building PHP 5.6.7 =============="
+php-build -i development --pear 5.6.7 $HOME/.phpenv/versions/5.6.7
+phpenv rehash 
+phpenv global 5.6.7
+
 echo "============ Installing PHPUnit ============="
 wget https://phar.phpunit.de/phpunit.phar
 chmod +x phpunit.phar
