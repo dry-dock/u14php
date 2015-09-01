@@ -34,15 +34,72 @@ php-build -i development --pear 5.3.29 $HOME/.phpenv/versions/5.3.29
 phpenv rehash 
 phpenv global 5.3.29
 
+echo "============ Installing PHPUnit ============="
+wget https://phar.phpunit.de/phpunit.phar
+chmod +x phpunit.phar
+mv phpunit.phar /usr/local/bin/phpunit
+
+echo "============ Installing Composer ============"
+curl -s http://getcomposer.org/installer | php
+chmod +x composer.phar
+mv composer.phar /usr/local/bin/composer
+
+echo "=========== Installing PHP extensions =============="
+apt-get install -y libzmq-dev
+printf '\n' | pecl install memcache
+printf '\n' | pecl install memcached
+printf '\n' | pecl install mongo
+printf '\n' | pecl install amqp
+printf '\n' | pecl install zmq-beta
+printf '\n' | pecl install redis
+
 echo "============ Building PHP 5.4.39 =============="
 php-build -i development --pear 5.4.39 $HOME/.phpenv/versions/5.4.39
 phpenv rehash 
 phpenv global 5.4.39
 
+echo "============ Installing PHPUnit ============="
+wget https://phar.phpunit.de/phpunit.phar
+chmod +x phpunit.phar
+mv phpunit.phar /usr/local/bin/phpunit
+
+echo "============ Installing Composer ============"
+curl -s http://getcomposer.org/installer | php
+chmod +x composer.phar
+mv composer.phar /usr/local/bin/composer
+
+echo "=========== Installing PHP extensions =============="
+apt-get install -y libzmq-dev
+printf '\n' | pecl install memcache
+printf '\n' | pecl install memcached
+printf '\n' | pecl install mongo
+printf '\n' | pecl install amqp
+printf '\n' | pecl install zmq-beta
+printf '\n' | pecl install redis
+
 echo "============ Building PHP 5.5.23 =============="
 php-build -i development --pear 5.5.23 $HOME/.phpenv/versions/5.5.23
 phpenv rehash 
 phpenv global 5.5.23
+
+echo "============ Installing PHPUnit ============="
+wget https://phar.phpunit.de/phpunit.phar
+chmod +x phpunit.phar
+mv phpunit.phar /usr/local/bin/phpunit
+
+echo "============ Installing Composer ============"
+curl -s http://getcomposer.org/installer | php
+chmod +x composer.phar
+mv composer.phar /usr/local/bin/composer
+
+echo "=========== Installing PHP extensions =============="
+apt-get install -y libzmq-dev
+printf '\n' | pecl install memcache
+printf '\n' | pecl install memcached
+printf '\n' | pecl install mongo
+printf '\n' | pecl install amqp
+printf '\n' | pecl install zmq-beta
+printf '\n' | pecl install redis
 
 echo "============ Building PHP 5.6.7 =============="
 php-build -i development --pear 5.6.7 $HOME/.phpenv/versions/5.6.7
