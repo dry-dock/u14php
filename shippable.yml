@@ -1,7 +1,4 @@
-language: php
-
-php:
-  - 5.3
+language: python
 
 install: true
 
