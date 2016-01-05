@@ -1,10 +1,12 @@
 #!/bin/bash -e
 
+
 # Install dependencies
 echo "=========== Installing dependencies ============"
 apt-get update
 apt-get install -y git wget cmake libmcrypt-dev libreadline-dev libzmq-dev
 apt-get build-dep -y php5-cli
+apt-get install php5-dev
 
 # Install libmemcached
 echo "========== Installing libmemcached =========="
@@ -39,7 +41,27 @@ echo "============ Activate phpenv ============="
 export PATH=$HOME/.phpenv/bin:$PATH
 eval "$(phpenv init -)"
 
-for file in /tmp/version/*;
+#Download pickle 
+git clone https://github.com/FriendsOfPHP/pickle.git /tmp/pickle
+
+# Install librabbitmq
+echo "11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+cd /tmp && wget https://github.com/alanxz/rabbitmq-c/releases/download/v0.7.1/rabbitmq-c-0.7.1.tar.gz
+tar xzf rabbitmq-c-0.7.1.tar.gz
+mkdir build && cd build
+cmake /tmp/rabbitmq-c-0.7.1
+cmake -DCMAKE_INSTALL_PREFIX=/usr/local /tmp/rabbitmq-c-0.7.1
+cmake --build . --target install
+cd /tmp/rabbitmq-c-0.7.1
+autoreconf -i
+./configure
+make
+make install
+cd /
+echo "11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+
+
+for file in /u14php/version/*;
 do
   . $file
 done
