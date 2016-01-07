@@ -13,11 +13,11 @@ phpenv global 7.0
 echo "============ Installing Composer ============"
 curl -s http://getcomposer.org/installer | php
 chmod +x composer.phar
-mv composer.phar $HOME/.phpenv/versions/7.0/bin
+mv composer.phar $HOME/.phpenv/versions/7.0/bin/composer
 
 #install pickle
 cd /tmp/pickle
-composer install
+$HOME/.phpenv/versions/5.6/bin/composer install
 
 # Install php extensions
 echo "=========== Installing PHP extensions =============="

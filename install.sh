@@ -4,7 +4,6 @@ sudo apt-get clean
 sudo mv /var/lib/apt/lists /tmp
 sudo mkdir -p /var/lib/apt/lists/partial
 sudo apt-get clean
-sudo apt-get update
 
 # Install dependencies
 echo "=========== Installing dependencies ============"
@@ -63,7 +62,6 @@ autoreconf -i
 make
 make install
 cd /
-echo "============ Installing librabbitmq ============"
 
 for file in /u14php/version/*;
 do
