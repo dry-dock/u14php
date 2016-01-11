@@ -18,5 +18,4 @@ mv composer.phar $HOME/.phpenv/versions/7.0/bin/composer
 #install pickle
 cd /tmp/pickle
 $HOME/.phpenv/versions/7.0/bin/composer install
-
 cd /
