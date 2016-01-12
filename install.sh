@@ -34,12 +34,6 @@ git clone git://github.com/php-build/php-build.git $HOME/php-build
 $HOME/php-build/install.sh
 rm -rf $HOME/php-build
 
-# Install phpunit
-echo "============ Installing PHPUnit ============="
-wget https://phar.phpunit.de/phpunit.phar
-chmod +x phpunit.phar
-mv phpunit.phar /usr/local/bin/phpunit
-
 # Activate phpenv
 echo "============ Activate phpenv ============="
 export PATH=$HOME/.phpenv/bin:$PATH

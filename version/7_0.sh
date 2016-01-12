@@ -9,6 +9,12 @@ echo "============ Setting phpenv to 7.0 ============"
 phpenv rehash
 phpenv global 7.0
 
+# Install phpunit
+echo "============ Installing PHPUnit ============="
+wget https://phar.phpunit.de/phpunit.phar
+chmod +x phpunit.phar
+mv phpunit.phar $HOME/.phpenv/versions/7.0/bin/phpunit
+
 # Install Composer
 echo "============ Installing Composer ============"
 curl -s http://getcomposer.org/installer | php
